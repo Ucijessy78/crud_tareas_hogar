@@ -29,8 +29,10 @@ export class MyComponent {
   render() {
     return (
       <div>
-      <h1>Task Management</h1>
+      <h1>Tareas del Hogar</h1>
       <task-form></task-form>
+      <br />
+      <br />
       <task-list></task-list>
     </div>
     )

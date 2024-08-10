@@ -87,12 +87,12 @@ export class TaskList {
     return (
       <div>
         {this.loading ? (
-          <p>Loading...</p>
+          <p>cargando...</p>
         ) : (
           <div>
             {this.editingTask ? (
               <form onSubmit={(event) => { event.preventDefault(); this.updateTask(); }}>
-                <h2>Edit Task</h2>
+                <h2>Editar Tarea</h2>
                 <label>
                   Title:
                   <input
@@ -126,15 +126,37 @@ export class TaskList {
                 <button type="button" onClick={() => this.cancelEditing()}>Cancel</button>
               </form>
             ) : (
-              <ul>
-                {this.tasks.map(task => (
-                  <li key={task.id}>
-                    {task.title} - {task.description}
-                    <button onClick={() => this.deleteTask(task.id)}>Delete</button>
-                    <button onClick={() => this.startEditing(task)}>Edit</button>
-                  </li>
-                ))}
-              </ul>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.tasks.map(task => (
+                    <tr key={task.id}>
+                      <td>{task.title}</td>
+                      <td>{task.description}</td>
+                      <td>{task.status}</td>
+                      <td>
+                        <button class="icon-button" onClick={() => this.startEditing(task)}>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17.25v3.75h3.75L17.663 10.837l-3.75-3.75L3 17.25zm4.5-2.25h4.5v-4.5H7.5v4.5zm7.5-7.5l3.75 3.75-4.5 4.5h-4.5V9h4.5V7.5h2.25z" fill="#000"/>
+                          </svg>
+                        </button>
+                        <button class="icon-button" onClick={() => this.deleteTask(task.id)}>
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 6h18v2H3V6zm0 4h18v12H3V10zm12 8H9v-2h6v2zm0-4H9v-2h6v2z" fill="#000"/>
+                          </svg>
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             )}
           </div>
         )}
