@@ -6,7 +6,7 @@ Este proyecto utiliza Stencil para construir un Web Component independiente dest
 
 ## Descripción del Proyecto
 
-El componente `task-list` permite gestionar una lista de tareas. Incluye funciones para visualizar las tareas existentes, editar detalles de una tarea y eliminar tareas. La interfaz está diseñada para ser intuitiva y funcional, integrando los estilos necesarios directamente en el componente.
+El componente  task-list permite gestionar una lista de tareas. Incluye funciones para visualizar las tareas existentes, editar detalles de una tarea y eliminar tareas. La interfaz está diseñada para ser intuitiva y funcional, integrando los estilos necesarios directamente en el componente.
 
 ## Configuración del Entorno
 
@@ -16,19 +16,15 @@ Para configurar el entorno del proyecto, sigue estos pasos:
 
    Clona este repositorio en un nuevo directorio y elimina la referencia remota original:
 
-   ```bash
-   git clone https://github.com/ionic-team/stencil-component-starter.git my-component
+     git clone https://github.com/ionic-team/stencil-component-starter.git my-component
    cd my-component
    git remote rm origin
    
-  ##2.** Instalar Dependencias**
-
+Instalar Dependencias
 Instala las dependencias necesarias para el proyecto: 
 npm install
 Iniciar el Servidor de Desarrollo
-
 Inicia el servidor de desarrollo para ver los cambios en tiempo real:
-
 npm start
 Construir el Componente para Producción
 
